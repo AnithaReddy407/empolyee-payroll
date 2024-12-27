@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    char name[50];
+    float hourly_wage, hours_worked, gross_pay, net_pay, tax;
+
+    printf("Enter employee name: ");
+    fgets(name, sizeof(name), stdin);
+
+    printf("Enter hourly wage: ");
+    scanf("%f", &hourly_wage);
+
+    printf("Enter hours worked: ");
+    scanf("%f", &hours_worked);
+
+    // Calculate gross pay
+    gross_pay = hourly_wage * hours_worked;
+
+    // Calculate tax (let's assume a flat tax rate of 20%)
+    tax = gross_pay * 0.20;
+    net_pay = gross_pay - tax;
+
+    printf("Employee Name: %s", name);
+    printf("Gross Pay: $%.2f\n", gross_pay);
+    printf("Tax Deducted: $%.2f\n", tax);
+    printf("Net Pay: $%.2f\n", net_pay);
+
+    return 0;
+}
+
